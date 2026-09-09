@@ -1,3 +1,8 @@
+## Version 0.74.2 (2026/09/09)
+
+ * Add RPM build support
+ * Add SystemD unit
+
 ## Version 0.74.1 (2026/09/08)
 
  * Add `libfoo` dependency
