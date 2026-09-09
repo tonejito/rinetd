@@ -54,10 +54,10 @@ p.roffit {
 <p class="level0"><span Class="bold">rinetd -v</span> 
 <p class="level0"><a name="DESCRIPTION"></a><h2 class="nroffsh">DESCRIPTION</h2>
 <p class="level0">
-<p class="level0"><span Class="bold">rinetd</span> redirects TCP or UDP connections from one IP address and port to another. <span Class="bold">rinetd</span> is a single-process server which handles any number of connections to the address/port pairs specified in the file <span Class="emphasis">/etc/rinetd.conf</span>. Since <span Class="bold">rinetd</span> runs as a single process using nonblocking I/O, it is able to redirect a large number of connections without a severe impact on the machine. This makes it practical to run services on machines inside an IP masquerading firewall. 
+<p class="level0"><span Class="bold">rinetd</span> redirects TCP or UDP connections from one IP address and port to another. <span Class="bold">rinetd</span> is a single-process server which handles any number of connections to the address/port pairs specified in the file <span Class="emphasis">/usr/local/etc/rinetd.conf</span>. Since <span Class="bold">rinetd</span> runs as a single process using nonblocking I/O, it is able to redirect a large number of connections without a severe impact on the machine. This makes it practical to run services on machines inside an IP masquerading firewall.
 <p class="level0"><span Class="bold">rinetd</span> is typically launched at boot time, using the following syntax: 
-<p class="level0"><span Class="bold">    /usr/sbin/rinetd</span> 
-<p class="level0">The configuration file is found in the file <span Class="emphasis">/etc/rinetd.conf</span>, unless another file is specified using the <span Class="bold">-c</span> command line option. 
+<p class="level0"><span Class="bold">    /usr/local/sbin/rinetd</span>
+<p class="level0">The configuration file is found in the file <span Class="emphasis">/usr/local/etc/rinetd.conf</span>, unless another file is specified using the <span Class="bold">-c</span> command line option.
 <p class="level0"><a name="OPTIONS"></a><h2 class="nroffsh">OPTIONS</h2>
 <p class="level0">
 <p class="level0"><span Class="bold">-f</span> Run <span Class="bold">rinetd</span> in the foreground, without forking to the background. 

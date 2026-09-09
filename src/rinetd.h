@@ -17,7 +17,13 @@ static int const RINETD_BUFFER_SIZE = 16384;
 static int const RINETD_LISTEN_BACKLOG = 128;
 static int const RINETD_DEFAULT_UDP_TIMEOUT = 72;
 
-#define RINETD_CONFIG_FILE "/etc/rinetd.conf"
+/* Default configuration file lives in $sysconfdir, which the build system
+   passes in via -DSYSCONFDIR (see src/Makefile.am). */
+#ifndef SYSCONFDIR
+#define SYSCONFDIR "/etc"
+#endif
+
+#define RINETD_CONFIG_FILE SYSCONFDIR "/rinetd.conf"
 #define RINETD_PID_FILE "/var/run/rinetd.pid"
 
 /* Global configuration */
