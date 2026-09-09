@@ -1,3 +1,7 @@
+## Version 0.74.0 (2026/09/07)
+
+ * Add new maintainer
+
 ## Version 0.73 (2021/02/19)
 
  * improve error reporting

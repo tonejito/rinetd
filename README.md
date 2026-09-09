@@ -1,5 +1,6 @@
-rinetd, by Thomas Boutell and Sam Hocevar. Released under the terms
-of the GNU General Public License, version 2 or later.
+rinetd, by Thomas Boutell, Sam Hocevar, and Andrés Hernández.
+Released under the terms of the GNU General Public License,
+version 2 or later.
 
 This program is used to efficiently redirect connections from one IP
 address/port combination to another. It is useful when operating virtual
