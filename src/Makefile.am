@@ -1,12 +1,12 @@
 
 EXTRA_DIST = parse.peg getopt.c getopt.h
 
-sbin_PROGRAMS = ../rinetd
-___rinetd_SOURCES = rinetd.c rinetd.h \
-                    parse.c parse.h \
-                    match.c match.h \
-                    net.c net.h \
-                    types.h
+sbin_PROGRAMS = ../bin/rinetd
+___bin_rinetd_SOURCES = rinetd.c rinetd.h \
+                        parse.c parse.h \
+                        match.c match.h \
+                        net.c net.h \
+                        types.h
 
 BUILT_SOURCES = parse.c
 
@@ -19,11 +19,12 @@ parse.c: parse.peg
 # _XOPEN_SOURCE is for struct sigaction
 # _GNU_SOURCE is for h_errno and gethostbyname-related macros
 # SYSCONFDIR is where the default rinetd.conf is looked up (see rinetd.h)
-___rinetd_CFLAGS = -std=c99 -D_POSIX_C_SOURCE=200809L \
-                   -D_XOPEN_SOURCE -D_GNU_SOURCE -D_DARWIN_C_SOURCE \
-                   -Wall -Wextra -Wwrite-strings \
-                   -I/usr/local/include
+___bin_rinetd_CPPFLAGS = -DSYSCONFDIR='"$(sysconfdir)"'
+
+___bin_rinetd_CFLAGS = -std=c99 -D_POSIX_C_SOURCE=200809L \
+                       -D_XOPEN_SOURCE -D_GNU_SOURCE -D_DARWIN_C_SOURCE \
+                       -Wall -Wextra -Wwrite-strings \
+                       -I/usr/local/include
 
 # libfoo is installed under /usr/local
-___rinetd_LDADD = -L/usr/local/lib -lfoo
-
+___bin_rinetd_LDADD = -L/usr/local/lib -lfoo

@@ -1063,6 +1063,8 @@ static int readArgs (int argc, char **argv, RinetdOptions *options)
 				printf("Usage: rinetd [OPTION]\n"
 					"  -c, --conf-file FILE   read configuration "
 					"from FILE\n"
+					"                         (default: "
+					RINETD_CONFIG_FILE ")\n"
 					"  -f, --foreground       do not run in the "
 					"background\n"
 					"  -h, --help             display this help\n"

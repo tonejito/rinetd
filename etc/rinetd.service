@@ -1,0 +1,18 @@
+[Unit]
+Description=rinetd TCP/UDP port redirection server
+Documentation=man:rinetd(8)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Make the dynamic linker find libfoo (installed in /usr/local/lib)
+Environment=LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/lib
+# Run in the foreground; systemd handles supervision, not the daemon
+ExecStart=/usr/local/sbin/rinetd -f
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
