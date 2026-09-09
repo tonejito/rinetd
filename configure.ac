@@ -13,9 +13,16 @@ AC_PROG_INSTALL
 # Checks for libraries.
 AC_CHECK_LIB(ws2_32, main, [LIBS="${LIBS} -lws2_32"])
 
+# libfoo is installed under /usr/local
+CPPFLAGS="${CPPFLAGS} -I/usr/local/include"
+LDFLAGS="${LDFLAGS} -L/usr/local/lib"
+AC_CHECK_LIB(foo, do_foo, [LIBS="${LIBS} -lfoo"],
+  [AC_MSG_ERROR([libfoo not found; build and `make install` it from ../libfoo first])])
+
 # Checks for header files.
 AC_HEADER_STDC
 AC_CHECK_HEADERS([arpa/inet.h errno.h fcntl.h netdb.h netinet/in.h stdlib.h string.h sys/ioctl.h sys/socket.h sys/time.h syslog.h unistd.h])
+AC_CHECK_HEADERS([foo.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST

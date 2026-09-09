@@ -55,6 +55,8 @@
 #include "rinetd.h"
 #include "parse.h"
 
+#include <foo.h>
+
 Rule *allRules = NULL;
 int allRulesCount = 0;
 int globalRulesCount = 0;
@@ -146,6 +148,7 @@ static RETSIGTYPE quit(int s);
 
 int main(int argc, char *argv[])
 {
+	do_foo();
 #ifdef _WIN32
 	WSADATA wsaData;
 	int result = WSAStartup(MAKEWORD(1, 1), &wsaData);

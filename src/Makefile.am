@@ -18,7 +18,12 @@ parse.c: parse.peg
 # _DARWIN_C_SOURCE is for NI_MAXHOST on OS X
 # _XOPEN_SOURCE is for struct sigaction
 # _GNU_SOURCE is for h_errno and gethostbyname-related macros
+# SYSCONFDIR is where the default rinetd.conf is looked up (see rinetd.h)
 ___rinetd_CFLAGS = -std=c99 -D_POSIX_C_SOURCE=200809L \
                    -D_XOPEN_SOURCE -D_GNU_SOURCE -D_DARWIN_C_SOURCE \
-                   -Wall -Wextra -Wwrite-strings
+                   -Wall -Wextra -Wwrite-strings \
+                   -I/usr/local/include
+
+# libfoo is installed under /usr/local
+___rinetd_LDADD = -L/usr/local/lib -lfoo
 
