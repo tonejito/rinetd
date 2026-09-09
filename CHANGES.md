@@ -1,3 +1,8 @@
+## Version 0.74.1 (2026/09/08)
+
+ * Add `libfoo` dependency
+ * Migrate to `/usr/local`
+
 ## Version 0.74.0 (2026/09/07)
 
  * Add new maintainer
